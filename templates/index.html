@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Quote Generator Pro</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<header class="hero">
+
+<h1>🤖 AI Quote Generator Pro</h1>
+
+<p>
+Generate inspiring AI-powered quotes in seconds using modern Large Language Models.
+</p>
+
+<div class="hero-buttons">
+
+<button onclick="scrollToGenerator()">
+Start Generating
+</button>
+
+<button id="themeBtn" onclick="toggleTheme()">
+🌙 Dark Mode
+</button>
+
+</div>
+
+</header>
+
+<section class="generator">
+
+<div class="selectors">
+
+<select id="category">
+
+<option>Motivation</option>
+<option>Success</option>
+<option>Study</option>
+<option>Business</option>
+<option>Health</option>
+<option>Leadership</option>
+<option>Sports</option>
+
+</select>
+
+<select id="model">
+
+<option>Llama 3.2</option>
+<option>Mistral</option>
+<option>Gemma</option>
+<option>Phi-3</option>
+
+</select>
+
+</div>
+
+<div class="input-row">
+
+<input
+id="topic"
+placeholder="Enter your topic...">
+
+<button onclick="generateQuote()">
+✨ Generate
+</button>
+
+</div>
+
+<div id="loading" class="loading">
+
+<div class="spinner"></div>
+
+<p>AI is generating...</p>
+
+</div>
+
+<div class="response-time">
+
+⚡ <span id="responseTime">
+0.0s
+</span>
+
+</div>
+
+<div class="quotes-grid">
+
+<div class="quote-card">
+
+<p id="quote1">
+Quote 1
+</p>
+
+<button onclick="favoriteQuote('quote1')">
+❤️
+</button>
+
+</div>
+
+<div class="quote-card">
+
+<p id="quote2">
+Quote 2
+</p>
+
+<button onclick="favoriteQuote('quote2')">
+❤️
+</button>
+
+</div>
+
+<div class="quote-card">
+
+<p id="quote3">
+Quote 3
+</p>
+
+<button onclick="favoriteQuote('quote3')">
+❤️
+</button>
+
+</div>
+
+</div>
+
+<div class="actions">
+
+<button onclick="copyCurrent()">
+📋 Copy
+</button>
+
+<button onclick="downloadPNG()">
+🖼 PNG
+</button>
+
+<button onclick="downloadPDF()">
+📄 PDF
+</button>
+
+<button onclick="shareLinkedIn()">
+LinkedIn
+</button>
+
+<button onclick="shareTwitter()">
+X
+</button>
+
+<button onclick="shareWhatsApp()">
+WhatsApp
+</button>
+
+</div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
