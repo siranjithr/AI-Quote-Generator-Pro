@@ -1,49 +1,97 @@
 # 🤖 AI Quote Generator Pro
 
-An AI-powered web application that generates inspirational quotes using Large Language Models (LLMs) running locally with Ollama.
+<p align="center">
 
-Built using **Flask**, **HTML**, **CSS**, **JavaScript**, and **Ollama (Llama 3.2)**.
+![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
+![Flask](https://img.shields.io/badge/Flask-3.1-black?style=for-the-badge&logo=flask)
+![Ollama](https://img.shields.io/badge/Ollama-Llama3.2-green?style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)
+![HTML5](https://img.shields.io/badge/HTML5-orange?style=for-the-badge&logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-blue?style=for-the-badge&logo=css3)
+
+</p>
+
+<p align="center">
+
+An AI-powered web application that generates inspirational quotes using Large Language Models (LLMs) running locally with **Ollama** and **Llama 3.2**.
+
+Built using **Flask**, **Python**, **HTML**, **CSS**, and **JavaScript**.
+
+</p>
 
 ---
 
 # 🚀 Features
 
-- ✨ AI-generated quotes
-- 📚 Multiple categories
-- 🤖 AI model selection
+- 🤖 AI-powered quote generation
+- 🧠 Local LLM integration using Ollama
+- ✨ Three unique AI-generated quotes
+- 📚 Multiple quote categories
+- 🌙 Dark / Light Mode
 - ❤️ Favorite quotes
 - 📋 Copy to clipboard
-- 🖼 Download as PNG
-- 📄 Download as PDF
-- 🌙 Dark / Light Mode
-- 📱 Responsive Design
-- ⚡ Response Time Display
-- 🎨 Glassmorphism UI
-- 🎇 Animated Background
-- 📤 Share to LinkedIn
-- 📤 Share to X
-- 📤 Share to WhatsApp
-- 💾 Local Favorites Storage
+- 📄 Export quotes as PDF
+- 🖼 Download quotes as PNG
+- 📤 Share to LinkedIn, X (Twitter), and WhatsApp
+- ⚡ Response time display
+- 🎨 Modern Glassmorphism UI
+- 📱 Fully Responsive Design
 
 ---
 
-# 🖥️ Screenshots
+# 📸 Screenshots
 
-## Home Page
+## 🏠 Home Page
 
-(Add screenshot here)
-
----
-
-## Quote Generation
-
-(Add screenshot here)
+![Home](screenshots/home.png)
 
 ---
 
-## Dark Mode
+## 🤖 AI Quote Generation
 
-(Add screenshot here)
+![Generate](screenshots/generate.png)
+
+---
+
+## 🌙 Dark Mode
+
+![Dark Mode](screenshots/darkmode.png)
+
+---
+
+## 📄 PDF Export
+
+![PDF](screenshots/pdf.png)
+
+---
+
+# 🏗️ Project Architecture
+
+```text
+              User
+                │
+                ▼
+      HTML + CSS + JavaScript
+                │
+         Fetch API Request
+                │
+                ▼
+            Flask Backend
+             (app.py)
+                │
+                ▼
+           Prompt Builder
+             (llm.py)
+                │
+                ▼
+      Ollama (Llama 3.2 Model)
+                │
+                ▼
+        AI Generated Quotes
+                │
+                ▼
+           Browser Display
+```
 
 ---
 
@@ -57,35 +105,40 @@ Built using **Flask**, **HTML**, **CSS**, **JavaScript**, and **Ollama (Llama 3.
 
 ## Backend
 
-- Flask
 - Python
+- Flask
 
-## AI
+## Artificial Intelligence
 
 - Ollama
 - Llama 3.2
-- Local LLM
+- Prompt Engineering
 
 ---
 
-# 📂 Project Structure
+# 📂 Folder Structure
 
-```
-AI-Quote-Generator/
+```text
+AI-Quote-Generator-Pro/
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+│
+├── templates/
+│   └── index.html
+│
+├── screenshots/
+│   ├── home.png
+│   ├── generate.png
+│   ├── darkmode.png
+│   └── pdf.png
 │
 ├── app.py
 ├── llm.py
 ├── requirements.txt
 ├── README.md
-│
-├── templates/
-│     └── index.html
-│
-├── static/
-│     ├── style.css
-│     └── script.js
-│
-└── screenshots/
+└── .gitignore
 ```
 
 ---
@@ -95,7 +148,7 @@ AI-Quote-Generator/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/AI-Quote-Generator.git
+git clone https://github.com/siranjithr/AI-Quote-Generator-Pro.git
 ```
 
 ---
@@ -103,7 +156,7 @@ git clone https://github.com/yourusername/AI-Quote-Generator.git
 ## Move into Project
 
 ```bash
-cd AI-Quote-Generator
+cd AI-Quote-Generator-Pro
 ```
 
 ---
@@ -134,13 +187,13 @@ pip install -r requirements.txt
 
 ## Install Ollama
 
-Download from:
+Download Ollama:
 
-https://ollama.com
+https://ollama.com/download
 
 ---
 
-## Pull Model
+## Download the AI Model
 
 ```bash
 ollama pull llama3.2:3b
@@ -156,13 +209,13 @@ ollama serve
 
 ---
 
-## Run Flask
+## Run the Application
 
 ```bash
 python app.py
 ```
 
-Open
+Open:
 
 ```
 http://127.0.0.1:5000
@@ -170,24 +223,43 @@ http://127.0.0.1:5000
 
 ---
 
-# 📈 Future Enhancements
+# 🎯 How It Works
 
-- 🔐 User Login
-- 👤 Dashboard
-- 📊 Analytics
-- 📈 Charts
-- ☁️ Cloud Deployment
-- 🔔 Notifications
+1. User enters a topic.
+2. Flask receives the request.
+3. A prompt is created in `llm.py`.
+4. Ollama processes the prompt using the Llama 3.2 model.
+5. Three AI-generated quotes are returned.
+6. Quotes are displayed with export and sharing options.
+
+---
+
+# 📈 Future Improvements
+
+- 🔐 User Authentication
+- 👤 User Dashboard
+- ⭐ Cloud-synced Favorites
+- 📊 Analytics Dashboard
 - 🌍 Multi-language Support
 - 🎙️ Voice Input
 - 🔊 Text-to-Speech
+- ☁️ Cloud Deployment
 - 🤝 Team Collaboration
 
 ---
 
-# 📸 Demo
+# 🎓 Learning Outcomes
 
-Add screenshots or a GIF of your application here.
+Through this project I learned:
+
+- Flask Web Development
+- REST API Communication
+- AI Model Integration
+- Prompt Engineering
+- Frontend–Backend Integration
+- JavaScript Fetch API
+- Responsive UI Design
+- Git & GitHub Workflow
 
 ---
 
@@ -198,7 +270,7 @@ Contributions are welcome.
 1. Fork the repository
 2. Create a feature branch
 3. Commit your changes
-4. Push the branch
+4. Push your branch
 5. Open a Pull Request
 
 ---
@@ -211,12 +283,18 @@ This project is licensed under the MIT License.
 
 # 👨‍💻 Author
 
-**Siranjith R**
+## Siranjith R
 
-B.E. Computer Science & Engineering
+**B.E. Computer Science & Engineering**
 
-AI & Full Stack Developer
+AI | Generative AI | Full Stack Development
+
+GitHub:
+
+https://github.com/siranjithr
 
 ---
 
-⭐ If you like this project, consider giving it a star on GitHub.
+## ⭐ Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
